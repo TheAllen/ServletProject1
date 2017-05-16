@@ -15,9 +15,11 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class ServletOne
  */
 //@WebServlet("/ServletOne")
+
 @WebServlet(description = "My First Servlet", 
 		urlPatterns = { "/FirstServlet" , "/FirstServlet.do"}, 
 		initParams = {@WebInitParam(name="id",value="1"),@WebInitParam(name="Liang Li",value="value")})
+
 public class ServletOne extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     public static final String HTML_START = "<html><body>";
@@ -38,7 +40,8 @@ public class ServletOne extends HttpServlet {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		PrintWriter out = response.getWriter();
 		Date date = new Date();
-		out.println(HTML_START + "<h2>Hi, I've made my first web application with Servlet!</h2><br/><h3>Date=" + date + "</h3>" + HTML_END);
+		out.println(HTML_START + "<h2>Hi, I've made my first web application with Servlet!</h2><br/><h3>Date=" + date + "</h3><br/>" 
+		+ "<h4> My name is Liang Li. I was born in April 8th, 1995 </h4>" + HTML_END);
 	}
 
 	/**
